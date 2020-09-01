@@ -16,7 +16,7 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }} # runs a test on Ubuntu, Windows and macOS
+    runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
@@ -31,9 +31,6 @@ jobs:
         uses: denolib/setup-deno@c7d7968ad4a59c159a777f79adddad6872ee8d96
         with:
           deno-version: ${{ matrix.deno }} # tests across multiple Deno versions
-
-      - name: Run Formatting Check
-        run: deno fmt --check
 
       - name: Fix Formatting
         run: deno fmt
