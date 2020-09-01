@@ -29,5 +29,5 @@ export default async ({
   }
 
   const noteId = await createNote({ title, description });
-  response.body = { msg: "Note created", noteId}
+  response.body = { msg: "Note created", noteId };
 };

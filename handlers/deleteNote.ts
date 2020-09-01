@@ -3,7 +3,7 @@ import { deleteNote, getNoteById } from "../services/notes.ts";
 
 export default async ({
   params,
-  response
+  response,
 }: {
   params: RouteParams;
   response: Response;

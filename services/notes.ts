@@ -10,12 +10,16 @@ export const getNotes = async (): Promise<Note[]> => {
   return notes.sort((a, b) => a.title.localeCompare(b.title));
 };
 
-export const getNoteById = async (noteId: number): Promise<Note | undefined> => {
+export const getNoteById = async (
+  noteId: number,
+): Promise<Note | undefined> => {
   const notes = await fetchData();
   return notes.find(({ id }) => id === noteId);
 };
 
-export const getNoteByTitle = async (noteTitle: string): Promise<Note | undefined> => {
+export const getNoteByTitle = async (
+  noteTitle: string,
+): Promise<Note | undefined> => {
   const notes = await fetchData();
   return notes.find(({ title }) => title === noteTitle);
 };
@@ -38,8 +42,6 @@ export const createNote = async (
 
 export const deleteNote = async (noteId: number): Promise<void> => {
   const notes = await fetchData();
-  const filteredNotes = notes.filter(note => note.id !== noteId);
+  const filteredNotes = notes.filter((note) => note.id !== noteId);
   persistData(filteredNotes);
 };
-
-
