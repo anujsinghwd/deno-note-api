@@ -1,6 +1,12 @@
-import { Request, Response } from "https://deno.land/x/oak@v6.1.0/mod.ts";
+import { Request, Response } from "../deps.ts";
 import { createNote, getNoteByTitle } from "../services/notes.ts";
 
+/**
+ * Create New Note
+ * @param {string} title
+ * @param {string} description
+ * @returns {Object} NoteId and Success Message
+ */
 export default async ({
   request,
   response,
